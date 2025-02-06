@@ -19,6 +19,30 @@ pub fn safe_decrement(idx: usize, length: usize) -> usize {
     idx - 1
 }
 
+pub fn safe_super_increment(idx: usize, length: usize) -> usize {
+    if length == 0 {
+        return idx;
+    }
+    if idx == length - 1 {
+        return 0;
+    } else if idx > length-15-1{
+        return length - 1;
+    }
+    idx + 15
+}
+
+pub fn safe_super_decrement(idx: usize, length: usize) -> usize {
+    if length == 0 {
+        return idx;
+    }
+    if idx == 0 {
+        return length -1;
+    } else if idx < 15 {
+        return 0;
+    }
+    idx - 15
+}
+
 pub fn song_album(s: &Song) -> Option<&String> {
     Some(&s.tags.iter().find(|t| t.0 == "Album")?.1)
 }

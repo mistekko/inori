@@ -23,6 +23,8 @@ pub fn get_message(s: &str) -> Option<Message> {
         "bottom" => Some(Message::Direction(Dirs::Vert(Vertical::Bottom))),
         "left" => Some(Message::Direction(Dirs::Horiz(Horizontal::Left))),
         "right" => Some(Message::Direction(Dirs::Horiz(Horizontal::Right))),
+        "super_up" => Some(Message::Direction(Dirs::Vert(Vertical::SuperUp))),
+        "super_down" => Some(Message::Direction(Dirs::Vert(Vertical::SuperDown))),
         "toggle_playpause" => Some(Message::PlayPause),
         "update_db" => Some(Message::UpdateDB),
         "select" => Some(Message::Select),

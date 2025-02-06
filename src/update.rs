@@ -3,7 +3,9 @@ use crate::config::keybind::{KeybindMap, KeybindTarget};
 use crate::event_handler::Result;
 use crate::model::proto::Searchable;
 use crate::model::{Model, Screen, State};
-use crate::util::{safe_decrement, safe_increment};
+use crate::util::{
+    safe_decrement, safe_increment, safe_super_decrement, safe_super_increment
+};
 use bitflags::bitflags;
 use mpd::status::State as PlayState;
 use ratatui::crossterm::event::{self, KeyCode, KeyEvent};
@@ -31,6 +33,8 @@ pub enum Vertical {
     Down,
     Top,
     Bottom,
+    SuperUp,
+    SuperDown,
 }
 
 #[derive(PartialEq, Eq, Clone, Debug)]

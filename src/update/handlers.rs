@@ -21,6 +21,8 @@ pub fn handle_vertical(msg: Vertical, selector: &mut impl Selector) {
             Vertical::Bottom => {
                 Some(safe_decrement(selector.len(), selector.len()))
             }
+            Vertical::SuperUp => Some(safe_super_decrement(sel, selector.len())),
+            Vertical::SuperDown => Some(safe_super_increment(sel, selector.len())),
         }),
     }
 }
